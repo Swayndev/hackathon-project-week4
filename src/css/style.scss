@@ -60,14 +60,13 @@ body {
 		}
 
 		img {
-			width: 30%;
+			width: 60%;
 			border-radius: 15px;
 		}
 
 		.featured__event__description {
 			display: flex;
 			flex-direction: column;
-			flex-grow: 1;
 			align-items: stretch;
 
 			.btn {
