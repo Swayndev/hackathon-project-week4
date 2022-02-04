@@ -24,10 +24,18 @@
 
 
     <div class="container">
-        <div id="modalWindow" class="modal hidden">
+        <div id="modalWindow" class="modal">
             <div class="modal-content">
                 <span class="modal--close">&times;</span>
-                <p>Some text in the Modal..</p>
+                <form action="" method="post">
+                    <!-- need name, date, description, image_url -->
+                    <input id="formFname" type="text" name="fname" placeholder="Your Name *">
+                    <input id="formLname" type="text" name="lname" placeholder="Your Name *">
+                    <input id="formEmail" type="email" name="email" placeholder="Your email *">
+                    <input id="formPhoneNumber" type="number" name="phoneNumber" placeholder="Your phone number">
+                    <input id="formBirthYear" type="date" name="birthYear">
+                    <button type="submit" id="submitForm">Submit</button>
+                </form>
             </div>
         </div>
         <div class="overlay hidden"></div>

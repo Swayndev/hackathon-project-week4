@@ -1,9 +1,15 @@
-export default function test() {
-	const buttonRegister = document.querySelector(".btn--register"),
-		modal = document.getElementById("modalWindow"),
-		btnClose = document.querySelector(".modal--close"),
-		overlay = document.querySelector(".overlay");
+const buttonRegister = document.querySelector(".btn--register"),
+	modal = document.getElementById("modalWindow"),
+	btnClose = document.querySelector(".modal--close"),
+	overlay = document.querySelector(".overlay"),
+	submit = document.getElementById("submitForm"),
+	formFname = document.getElementById("formFname"),
+	formLname = document.getElementById("formLname"),
+	formEmail = document.getElementById("formEmail"),
+	formPhoneNumber = document.getElementById("formPhoneNumber"),
+	formBirthYear = document.getElementById("formBirthYear");
 
+export default function test() {
 	//calls the modal window
 	buttonRegister.addEventListener("click", (e) => {
 		if (modal.classList.contains("hidden")) {
@@ -26,5 +32,22 @@ export default function test() {
 	document.addEventListener("keydown", function (e) {
 		e.preventDefault;
 		if (e.key === "Escape" && !modal.classList.contains("hidden")) close();
+	});
+
+	submit.addEventListener("click", (e) => {
+		e.preventDefault();
+		const init = {
+			method: "POST",
+			body: JSON.stringify({
+				formFname: formFname.value,
+				formLname: formLname.value,
+				formEmail: formEmail.value,
+				formPhoneNumber: formPhoneNumber.value,
+				formBirthYear: formBirthYear.value,
+			}),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		};
 	});
 }
