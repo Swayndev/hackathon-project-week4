@@ -1,4 +1,5 @@
 import { loadData } from "./script.js";
+
 // ==================================
 export class Widget {
 	constructor(event) {
@@ -17,10 +18,14 @@ export class Widget {
              <div class="event__widget">
                  <h2 class="event__widget-title">${this.name}</h2>
                     <span><button class="btn event__widget-button">
-                        Info about the event
+                        More Info
                     </button></span>
+					
 
                     <div class="event__info event__info--hidden" id="event_${this.id}">
+					<span><button class="btn register-${this.id}">
+                        Register
+                    </button></span>
                         <p>${this.date}</p>
                         <p>${this.description}</p>
                      <img class="event__widget-image" src="${this.image_url}" alt="event image"/>

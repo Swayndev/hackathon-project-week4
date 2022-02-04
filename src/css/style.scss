@@ -97,8 +97,7 @@ body {
 	}
 
 	.event__widget {
-		width: fit-content;
-		height: 35em;
+		// height: 35em;
 
 		margin: 1em;
 		padding: 1em;
@@ -107,7 +106,7 @@ body {
 
 		//
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: space-evenly;
 
 		&-image {
