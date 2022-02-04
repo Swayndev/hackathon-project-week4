@@ -9,6 +9,32 @@ const buttonRegister = document.querySelector(".btn--register"),
 	formPhoneNumber = document.getElementById("formPhoneNumber"),
 	formBirthYear = document.getElementById("formBirthYear");
 
+const postForm = async () => {
+	try {
+		const url = `https://test-api.codingbootcamp.cz/api/9e5603be/events/1/registrations`;
+		const formData = {
+			formFname: formFname.value,
+			formLname: formLname.value,
+			email: formEmail.value,
+			formPhoneNumber: formPhoneNumber.value,
+			formBirthYear: formBirthYear.value,
+		};
+		const myResponse = await fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(formData),
+		});
+		const myUsableReposnse = await myResponse.json();
+		if (myUsableReposnse.status === "success") {
+			alert("you registration has been logged!");
+		}
+	} catch (err) {
+		console.error(err);
+	}
+};
+
 export default function test() {
 	//calls the modal window
 	buttonRegister.addEventListener("click", (e) => {
@@ -36,18 +62,7 @@ export default function test() {
 
 	submit.addEventListener("click", (e) => {
 		e.preventDefault();
-		const init = {
-			method: "POST",
-			body: JSON.stringify({
-				formFname: formFname.value,
-				formLname: formLname.value,
-				formEmail: formEmail.value,
-				formPhoneNumber: formPhoneNumber.value,
-				formBirthYear: formBirthYear.value,
-			}),
-			headers: {
-				"Content-Type": "application/json",
-			},
-		};
+		// const
+		postForm();
 	});
 }
