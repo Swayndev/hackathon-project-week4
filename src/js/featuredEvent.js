@@ -10,7 +10,8 @@ const getEvents = async () => {
 		const listAllEvents = await data.json();
 		featuredName.textContent = listAllEvents[0].name;
 		featuredDescr.textContent = listAllEvents[0].description;
-		// featuredImage.src = listAllEvents[0].img_url;
+		featuredImage.src = listAllEvents[0].image_url;
+		featuredImage.alt = listAllEvents[0].name;
 	} catch (error) {
 		console.error(error);
 	}

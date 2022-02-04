@@ -13,7 +13,6 @@ const loadData = async () => {
 		);
 		// this is converting the response into JSON format
 		const responseData = await response.json();
-		console.log("This is the responseData const", responseData);
 
 		return responseData;
 	} catch (error) {
