@@ -43,5 +43,43 @@ body {
 
 	.featured__event {
 		background-color: $light-bg-color;
+		display: flex;
+		border-radius: 15px;
+		padding: 1rem;
+		gap: 1rem;
+
+		.title--vertical {
+			writing-mode: sideways-lr;
+			text-transform: uppercase;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		img {
+			width: 30%;
+			border-radius: 15px;
+		}
+
+		.featured__event__description {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			align-items: stretch;
+
+			.btn {
+				align-self: flex-end;
+
+				width: 5em;
+				margin-top: auto;
+				padding: 0.5em;
+				background-color: $dark-bg-color;
+				font-weight: 100;
+				font-size: 1.1em;
+				text-align: center;
+				&:hover {
+					background-color: $light-bg-color;
+				}
+			}
+		}
 	}
 }
