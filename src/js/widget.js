@@ -34,6 +34,7 @@ export class Widget {
              </div>
          `;
 		this.widget_btn();
+		this.registerBtn();
 		return this.myElem;
 	}
 
@@ -52,4 +53,20 @@ export class Widget {
 				// changeInfoState.className = 'event__info';
 			}); // the end of the addEventListener on .event__info
 	} // The end of the widget_btn function
+
+	registerBtn() {
+		const button = this.myElem.querySelector(`.register-${this.id}`),
+			modal = document.getElementById("modalWindow"),
+			btnClose = document.querySelector(".modal--close"),
+			overlay = document.querySelector(".overlay");
+
+		button.addEventListener("click", (e) => {
+			if (modal.classList.contains("hidden")) {
+				modal.classList.remove("hidden");
+			}
+			if (overlay.classList.contains("hidden")) {
+				overlay.classList.remove("hidden");
+			}
+		});
+	}
 } // The end of the Widget class
